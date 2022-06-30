@@ -63,11 +63,15 @@ bool findBoxLessFifty(std::vector<int> &prisoners, std::vector<int>& boxes)
     return fail;
 }
 
-int main()
+int main(int argc, char* argv[])
 {
+    int num_iters = 0;
+    for (int i = 0; i < argc; ++i)
+        num_iters = atoi(argv[i]);
+    std::cout << "Generating " << num_iters << " prisons to escape from" << std::endl;
     int num_fails = 0;
     int num_successes = 0;
-    for (int iters = 0; iters < 1000000; iters++) {
+    for (int iters = 0; iters < num_iters; iters++) {
         std::vector<int> prisoners(100, -1);
         std::vector<int> boxes(100, -1);
         fillVectorRandom1to100(prisoners);
@@ -77,5 +81,5 @@ int main()
         else num_successes++;
     }
 
-    std::cout << "our success rate is: " << double((double(num_successes) / double(num_fails + num_successes)) * 100);
+    std::cout << "Our success rate is: " << double((double(num_successes) / double(num_fails + num_successes)) * 100) << " for our " << num_iters << " prisons" << std::endl;
 }
