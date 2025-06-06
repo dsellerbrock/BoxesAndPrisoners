@@ -30,3 +30,15 @@
 *.exe
 *.out
 *.app
+
+*.db
+
+.vs/BoxesAndPrisoners/v17/
+
+*.tlog
+
+BoxesAnd.10283f71/x64/Debug/
+
+x64/Debug/
+
+.vs/BoxesAndPrisoners/FileContentIndex/
